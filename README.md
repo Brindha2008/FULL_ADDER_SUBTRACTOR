@@ -1,5 +1,5 @@
-# FULL_ADDER_SUBTRACTOR
 
+DATE:-25/11/2025
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
 
 **AIM:**
@@ -43,13 +43,51 @@ Borrow out = A'Bin + A'B + BBin
 Write the detailed procedure here
 
 **Program:**
+FUL ADDER:-
+```
+module full_adder (
+    input  wire a, b, cin,   // Inputs
+    output wire sum, carry   // Outputs
+);
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+    // Logic equations
+    assign sum   = a ^ b ^ cin;                  // XOR for sum
+    assign carry = (a & b) | (b & cin) | (a & cin); // Majority function for carry
+
+endmodule
+```
+FULL SUB:-
+```
+module full_subtractor (
+    input  wire a, b, bin,       // Inputs
+    output wire diff, borrow     // Outputs
+);
+
+    // Logic equations
+    assign diff   = a ^ b ^ bin;                  // Difference
+    assign borrow = (~a & b) | (~(a ^ b) & bin);  // Borrow logic
+
+endmodule
+```
+Deveploed by:Brindha A R
+
+Register no:25013493
+
 
 **RTL Schematic**
+FULL ADDER :-
+<img width="1183" height="678" alt="Screenshot 2025-11-25 214402" src="https://github.com/user-attachments/assets/ca3b999a-2f8e-43bc-9816-53c45182b839" />
+FULL SUB:-
+<img width="1183" height="547" alt="Screenshot 2025-11-25 214755" src="https://github.com/user-attachments/assets/815f545e-2077-4f2f-8e61-cd2d21ce7f95" />
+
+
 
 **Output Timing Waveform**
+FULL ADDER:-
+<img width="1542" height="273" alt="Screenshot 2025-11-25 214419" src="https://github.com/user-attachments/assets/abe206dd-5114-4d50-9113-5b5b0f41cf29" />
+FULL SUB:-
+<img width="1576" height="351" alt="Screenshot 2025-11-25 214810" src="https://github.com/user-attachments/assets/948f7fca-1ebb-482d-ba17-5b7741909470" />
+
 
 **Result:**
 
